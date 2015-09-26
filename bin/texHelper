@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/texHelper.rb"
+
+begin
+	TexHelper::Application.start(ARGV)
+rescue Exception => e
+	abort "texHelper: #{e.message}"
+end

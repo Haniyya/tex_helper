@@ -38,6 +38,6 @@ $sudo apt-get install texlive-lang-german
 ```
 ###Windows
 ```
-ruby texHelper
+ruby bin/texHelper
 ```
 

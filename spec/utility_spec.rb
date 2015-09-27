@@ -1,9 +1,12 @@
 require "spec_helper"
+require_relative "../lib/texHelper/utility.rb"
 
-RSpec.describe Utility, '#find_EOD' do
-	describe '#find_EOD' do
+RSpec.describe "User-module" do
 
-		expect(find_EOD "data/templates/wrabBack.tex.erb").not_to eq -1
-	end
+  let(:dummy) {Class.new{include TexHelper::Utility}}
+
+  it '#find_EOD' do
+    expect(dummy.new.find_EOD "../data/templates/wrapBack.tex.erb").not_to eq -1
+  end
 
 end

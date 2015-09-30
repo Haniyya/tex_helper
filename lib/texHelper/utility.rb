@@ -1,7 +1,11 @@
 module TexHelper
   module Utility
-    def relative_src(src=nil,options)
-      Pathname.new(src).relative_path_from Pathname.new(Dir.pwd + '/' + options[:destination])			
+    def relative_src(src,options)
+      src = Pathname.new(Dir.pwd + src)
+      destination = Pathname.new(Dir.pwd + options[:destination])
+      path =  src.relative_path_from(destination).to_s
+      path.slice!(0,3)
+      return path
     end
 
     def find_EOD(file)

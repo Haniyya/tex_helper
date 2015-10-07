@@ -1,4 +1,5 @@
 module TexHelper
+  ## Utility Module to provide file interaction Methods.
   module Utility
     def relative_src(src, options)
       src = Pathname.new(Dir.pwd + src)

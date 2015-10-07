@@ -4,6 +4,6 @@ require_relative '../lib/texHelper.rb'
 
 begin
   TexHelper::Application.start(ARGV)
-rescue Exception => e
+rescue StandartError => e
   abort "texHelper: #{e.message}"
 end

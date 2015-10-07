@@ -23,19 +23,14 @@ module TexHelper
     desc 'cleanCompile FILE', 'cc for short.Compiles a Tex-File cleanly by
     Extracting the auxilary Files into a different seperate directory.'
     def clean_compile(file)
-      pb = ProgressBar.create
       file = Pathname.new(file)
       Dir.chdir(file.parent)
       aux_dir = file.basename('.tex').to_s + '_aux'
-      puts aux_dir
-      10.times { pb.increment }
-      system "mkdir -p #{aux_dir}"
-      10.times { pb.increment }
+      Dir.mkdir aux_dir
       puts file.basename
       2.times do
         system "pdflatex -interaction=batchmode
         -output-directory=#{aux_dir} #{file.basename}"
-        40.times { pb.increment }
       end
       system "mv #{aux_dir}/#{file.basename('.tex').to_s + '.pdf'} #{Dir.pwd}"
     end

@@ -12,8 +12,12 @@ module TexHelper
 
     attr_accessor :out
 
-    class_option :destination, aliases: '-d', default: Dir.pwd, type: :string, banner: 'Output_destination', desc: 'Outpust destination. Default is the Working Directory.'
-    class_option :times, aliases: '-t', default: 1, type: :numeric, banner: 'Number of Snippets', desc: 'The Number of times the Snippet shuld be created.'
+    class_option :destination, aliases: '-d', default: Dir.pwd,
+                               type: :string, banner: 'Output_destination', desc: 'Outpust destination.
+      Default is the Working Directory.'
+    class_option :times, aliases: '-t', default: 1, type: :numeric,
+                         banner: 'Number of Snippets', desc:
+      'The Number of times the Snippet shuld be created.'
     class_option :inplace, aliases: '-i', default: false, type: :boolean, desc: 'Wraps Snippet into a Document Template so that it can be compiled as is.'
     class_option :force, aliases: '-f', default: false, type: :boolean, desc: 'Overwrites the output File if it already exists.'
     class_option :verbose, aliases: '-v', default: false, type: :boolean, desc: 'Prints the File to Console if true.'
